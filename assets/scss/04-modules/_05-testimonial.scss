@@ -1,0 +1,139 @@
+/*----------------------------------------*/
+/*  Testimonial CSS
+/*----------------------------------------*/
+
+.testimonial {
+  &-item {
+    .name {
+      color: $white;
+      font-weight: $font-weight-medium;
+      margin-bottom: 6px;
+      @include transition(all .5s ease-in-out);
+    }
+    .designation {
+      color: $white;
+      font-weight: $font-weight-normal;
+      margin-bottom: 0;
+    }
+    &:hover {      
+      .client-thumb {
+        img {
+          @include scale(1.1);
+        }
+      }
+      .name {
+        color: $primary;
+      }
+    }
+  }
+  &-content {
+    background-color: $white;
+    border-radius: 10px 10px 10px 0;
+    padding: 21px 28px 25px;
+    position: relative;
+    @media #{$small-mobile} {
+      padding: 36px 28px 40px;
+    }
+    &:after {
+      background-color: $white;
+      border-radius: 0 0 0 10px;
+      bottom: -45px;
+      content: "";
+      height: 45px;
+      left: 0;
+      position: absolute;
+      width: 80%;
+    }
+    .icon-quote {
+      bottom: -17px ;
+      position: absolute;
+      pointer-events: none;
+      right: 7px;
+      @media #{$large-mobile} {
+        bottom: -15px;
+      }
+    }
+    p {
+      color: #2d2d2d;
+      font-size: 18px;
+      font-weight: $font-weight-medium;
+      line-height: 31px;
+      @media #{$large-mobile} {
+        font-size: 15px;
+        font-weight: 400;
+        line-height: 1.6;
+        margin-bottom: 3px;
+      }
+      @media #{$small-mobile} {
+        font-size: 16px;
+      }
+    }
+  }
+  &-info {
+    align-items: center;
+    background-color: #0b0b0b;
+    border-radius: 40px 0 0 40px;
+    display: flex;
+    padding: 13px 5px;
+    position: relative;
+    z-index: 1;
+    @media #{$large-mobile} {
+      padding: 13px;
+    }
+    .client-thumb {
+      border-radius: 50%;
+      margin-right: 25px;
+      overflow: hidden;
+      @media #{$large-mobile} {
+        margin-right: 12px;
+        max-width: 65px;
+      }
+      img {
+        @include transition(all .5s ease-in-out);
+      }
+    }
+  }
+}
+
+.swiper-button-style2 {
+  position: relative;
+  .swiper-button {
+    &-prev, &-next {
+      border-radius: 4px;
+      color: $white;
+      font-size: 30px;
+      height: auto;
+      left: -100px;
+      line-height: 1;
+      text-align: center;
+      top: calc(50% - 44px);
+      width: auto;
+      transition: $transition-base;
+      @include translate(0, -50%);
+      @media #{$laptop-device, $desktop-device, $tablet-device, $large-mobile} {
+        left: -40px;
+      }
+      &:hover {
+        color: $primary;
+      }
+      &:before {
+        content: "\e605";
+        font-family: 'Simple-Line-Icons';
+        font-size: 30px;
+      }
+      &:after {
+        display: none;
+      }
+    }
+    &-next {
+      left: auto;
+      right: -100px;
+      @media #{$laptop-device, $desktop-device, $tablet-device, $large-mobile} {
+        right: -40px;
+      }
+      &:before {
+        content: "\e606";
+      }
+    }
+  }
+}

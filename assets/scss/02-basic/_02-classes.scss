@@ -1,0 +1,271 @@
+/*----------------------------------------*/
+/*  Template Classes CSS
+/*----------------------------------------*/
+
+.bg-img {
+  background: no-repeat center center;
+  background-size: cover;
+}
+
+.wrapper {
+  overflow-x: hidden;
+}
+
+.section-space {
+  padding-bottom: 110px;
+  padding-top: 110px;
+  @media #{$desktop-device} {
+    padding-top: 90px;
+    padding-bottom: 90px;
+  }
+  @media #{$tablet-device, $large-mobile} {
+    padding-top: 80px;
+    padding-bottom: 80px;
+  }
+}
+
+.section-top-space {
+  padding-top: 110px;
+  @media #{$desktop-device} {
+    padding-top: 90px;
+  }
+  @media #{$tablet-device, $large-mobile} {
+    padding-top: 80px;
+  }
+}
+
+.section-bottom-space {
+  padding-bottom: 110px;
+  @media #{$desktop-device} {
+    padding-bottom: 90px;
+  }
+  @media #{$tablet-device, $large-mobile} {
+    padding-bottom: 80px;
+  }
+}
+
+.section-two-space {
+  padding-bottom: 80px;
+  padding-top: 80px;
+}
+
+.section-two-top-space {
+  padding-top: 80px;
+}
+
+.section-two-bottom-space {
+  padding-bottom: 80px;
+}
+
+.section-three-space {
+  padding-bottom: 60px;
+  padding-top: 60px;
+}
+
+.section-three-top-space {
+  padding-top: 60px;
+}
+
+.section-three-bottom-space {
+  padding-bottom: 60px;
+}
+
+.row-gutter-20 {
+  margin-right: -10px;
+  margin-left: -10px;
+  .col,
+  [class*=col-] {
+    padding-left: 10px;
+    padding-right: 10px;
+  }
+}
+
+.btn {
+  background-color: $primary;
+  border: 1px solid $primary;
+  box-shadow: none;
+  border-radius: 0;
+  color: $white;
+  display: inline-block;
+  font-size: 14px;
+  font-weight: $font-weight-semi-bold;
+  line-height: 48px;
+  min-height: 48px;
+  min-width: 160px;
+  padding: 0 15px;
+  text-align: center;
+  text-transform: uppercase;
+  transition: $transition-base;
+  @media #{$tablet-device} {
+    font-size: 13px;
+    line-height: 43px;
+    min-height: 45px;
+    min-width: 135px;
+  }
+  @media #{$large-mobile} {
+    font-size: 12px;
+    line-height: 35px;
+    min-height: 35px;
+    min-width: auto;
+    padding: 0 12px;
+  }
+  @media #{$extra-small-mobile} {
+    line-height: 36px;
+    min-height: 38px;
+    padding: 0 12px;
+  }
+  &:hover, &:focus, &:active {
+    background-color: darken($primary, 7%);
+    border-color: darken($primary, 7%);
+    color: $white;
+    .icon {
+      color: $white;
+    }
+  }
+  &:focus {
+    box-shadow: none;
+  }
+  .icon {
+    color: $white;
+    font-size: 14px;
+    margin-left: 8px;
+    transition: $transition-base;
+    @media #{$large-mobile} {
+      font-size: 12px;
+      margin-left: 6px;
+    }
+  }
+  &.btn-white {
+    background-color: $white;
+    border-color: $white;
+    color: #080806;
+    .icon {
+      color: #080806;
+    }
+    &:hover {
+      background-color: $primary;
+      border-color: $primary;
+      color: $white;
+      .icon {
+        color: $white;
+      }
+    }
+  }
+  &.btn-hover-white {
+    &:hover {
+      background-color: $white;
+      border-color: $white;
+      color: #080806;
+      .icon {
+        color: #080806;
+      }
+    }
+  }
+  &.btn-border {
+    background-color: transparent;
+    border-color: $black;
+    color: #080806;
+    .icon {
+      color: #080806;
+    }
+    &:hover {
+      background-color: $primary;
+      border-color: $primary;
+      color: $white;
+      .icon {
+        color: $white;
+      }
+    }
+  }
+  &-link {
+    color: $white;
+    font-size: 14px;
+    font-weight: $font-weight-medium;
+    text-decoration: none;
+    text-transform: uppercase;
+    transition: $transition-base;
+    @media #{$tablet-device, $large-mobile} {
+      font-size: 12px;
+    }
+    .icon {
+      font-size: 12px;
+      margin-left: 10px;
+      transition: $transition-base;
+      @media #{$tablet-device, $large-mobile} {
+        margin-left: 5px;
+      }
+    }
+    &:hover {
+      color: $primary;
+    }
+  }
+}
+
+.offcanvas-backdrop,
+.modal-backdrop {
+  background-color: rgba(43, 43, 43, 0.92);
+  cursor: url('../images/icons/cancel-white.webp'), auto;
+  &.show {
+    opacity: 1;
+  }
+}
+
+.fw-semi-bold {
+  font-weight: $font-weight-semi-bold !important;
+}
+
+.text-hover-primary {
+  &:hover {
+    color: $primary !important;
+    i {
+      color: $primary !important;
+    }
+  }
+}
+
+.text-hover-headings-color {
+  &:hover {
+    color: $headings-color !important;
+    i {
+      color: $headings-color !important;
+    }
+  }
+}
+
+.bg-theme3 {
+  background-color: #12a05c !important;
+}
+
+.bg-theme4 {
+  background-color: #ff9900 !important;
+}
+
+.bg-gray-light {
+  background-color: #f0f2f5 !important;
+}
+
+.row-align {
+  .col-align-left {
+    width: 30%;
+  }
+  .col-align-right {
+    width: 70%;
+  }
+}
+
+input {
+  &:focus {
+    @include placeholder {
+      color: transparent;
+      opacity: 0;
+    }
+  }
+}
+
+.max-w-auto {
+  max-width: none !important;
+}
+
+.rounded-10 {
+  border-radius: 10px !important;
+}

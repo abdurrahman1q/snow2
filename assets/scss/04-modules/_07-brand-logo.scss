@@ -1,0 +1,24 @@
+/*----------------------------------------*/
+/*  Brand Logo CSS
+/*----------------------------------------*/
+
+.brand-logo-item {
+  align-items: center;
+  border-right: 1px solid #e1e1e1;
+  display: flex;
+  justify-content: center;
+  min-height: 134px;
+  img {
+    user-select: none;
+  }
+}
+
+.brand-logo-slider-container {
+  border: 1px solid #e1e1e1;
+  border-right: none;
+}
+
+.brand-logo-two-slider-container {
+  border: 1px solid #e1e1e1;
+  border-right: none;
+}
