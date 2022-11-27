@@ -1,8 +1,8 @@
 <?php
-$servername = "localhost";
-$username = "root";
-$password = "";
-$database = "book";
+$servername = "sql305.ezyro.com";
+$username = "ezyro_32967575";
+$password = "@iamar64870@";
+$database = "ezyro_32967575_book";
 
 
 

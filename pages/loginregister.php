@@ -1,4 +1,43 @@
+<?php
+$showAlert = false;
+$showError = false;
+if ($_SERVER["REQUEST_METHOD"] == "POST") {
+    include('dbconnect.php');
+    $username = $_POST["username"];
+    $password = $_POST["password"];
+    $cpassword = $_POST["cpassword"];
+    $exists = false;
+    if (($password == $cpassword) && $exists == false) {
+        $sql = "INSERT INTO `users` ( `username`, `password`, `date`) VALUES ('$username', '$password', current_timestamp())";
+        $result = mysqli_query($conn, $sql);
+        if ($result) {
+            $showAlert = true;
+        }
+    } else {
+        $showError = "Passwords do not match";
+    }
+}
+?>
+
 <main class="main-content">
+<?php
+    if ($showAlert) {
+        echo ' <div class="alert alert-success alert-dismissible fade show" role="alert">
+            <strong>Success!</strong> Your account is now created and you can login
+            <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+                <span aria-hidden="true">×</span>
+            </button>
+        </div> ';
+    }
+    if ($showError) {
+        echo ' <div class="alert alert-danger alert-dismissible fade show" role="alert">
+            <strong>Error!</strong> ' . $showError . '
+            <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+                <span aria-hidden="true">×</span>
+            </button>
+        </div> ';
+    };
+    ?>
 
     <!--== Start Page Header Area Wrapper ==-->
     <div class="page-header-area">
@@ -8,7 +47,7 @@
                     <div class="page-header-content">
                         <h2 class="page-header-title">Login / Register</h2>
                         <ol class="breadcrumb">
-                            <li class="breadcrumb-item"><a href="index.html">Home //</a></li>
+                            <li class="breadcrumb-item"><a href="?p=home">Home //</a></li>
                             <li class="breadcrumb-item active" aria-current="page">Login-Register</li>
                         </ol>
                     </div>
@@ -27,34 +66,9 @@
     <div class="login-register-area section-space">
         <div class="container">
             <div class="row">
-                <div class="col-md-5 login-register-border">
-                    <div class="login-register-content">
-                        <div class="login-register-title mb-30">
-                            <h3>Login</h3>
-                            <p>Welcome back! Please enter your username and password to login. </p>
-                        </div>
-                        <div class="login-register-style login-register-pr">
-                            <form action="#" method="post">
-                                <div class="login-register-input">
-                                    <input type="text" name="user-name" placeholder="Username or email address">
-                                </div>
-                                <div class="login-register-input">
-                                    <input type="password" name="user-password" placeholder="Password">
-                                    <div class="forgot">
-                                        <a href="login-register.html">Forgot?</a>
-                                    </div>
-                                </div>
-                                <div class="remember-me-btn">
-                                    <input id="remember-me-checkbox" type="checkbox">
-                                    <label for="remember-me-checkbox">Remember me</label>
-                                </div>
-                                <div class="btn-register">
-                                    <a class="btn-register-now" href="account.html">Login</a>
-                                </div>
-                            </form>
-                        </div>
-                    </div>
-                </div>
+               
+
+    
                 <div class="col-md-7">
                     <div class="login-register-content login-register-pl">
                         <div class="login-register-title mb-30">
@@ -62,15 +76,15 @@
                             <p>Create new account today to reap the benefits of a personalized shopping experience. </p>
                         </div>
                         <div class="login-register-style">
-                            <form action="#" method="post">
+                            <form action="?p=loginregister" method="post">
                                 <div class="login-register-input">
-                                    <input type="text" name="user-name" placeholder="Username">
+                                    <input type="text" name="username" placeholder="Username">
                                 </div>
                                 <div class="login-register-input">
-                                    <input type="text" name="user-name" placeholder="E-mail address">
+                                    <input type="password" name="password" placeholder="Password">
                                 </div>
                                 <div class="login-register-input">
-                                    <input type="password" name="user-password" placeholder="Password">
+                                    <input type="password" name="cpassword" placeholder="COnfirm Password">
                                 </div>
                                 <div class="login-register-paragraph">
                                     <p>Your personal data will be used to support your experience throughout this
@@ -78,7 +92,7 @@
                                         our <a href="login-register.html">privacy policy.</a></p>
                                 </div>
                                 <div class="btn-register">
-                                    <a class="btn-register-now" href="account.html">Register</a>
+                                    <input type="submit" class="btn-register-now" value="Register">
                                 </div>
                             </form>
                             <div class="register-benefits">

@@ -43,14 +43,14 @@ button {
     <div class="row">
 
         <!--Grid column-->
-        <div class="col-md-9 mb-md-0 mb-5 mx-7">
+        <div class="col-md-9 mb-md-0 mb-5 mx-7 col-md-6">
             <form action="?p=contact" class=" row g-3" method="post">
-                <input class="form-control col-md-6" type="text" name="name"><br>
-                <input class="form-control" type="text" name="email"><br>
-                <input class="form-control" type="text" name="subject"><br>
-                <textarea name="message" class="form-control" cols="30" rows="10"></textarea>
+                <input class="form-control col-md-6" type="text" placeholder="Name" name="name"><br>
+                <input class="form-control" type="text" placeholder="Email" name="email"><br>
+                <input class="form-control" type="text" placeholder="Sebject" name="subject"><br>
+                <textarea name="message" class="form-control" cols="30" placeholder="Message" rows="10"></textarea>
                 <br>
-                <input type="submit" class="btn " name="btnsave" value="btnsave">
+                <input type="submit" class="btn " name="btnsave" value="Send">
             </form>
 
 

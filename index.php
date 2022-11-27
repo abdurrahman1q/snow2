@@ -1,3 +1,7 @@
+<?php 
+session_start();
+
+?>
 <!DOCTYPE html>
 <html class="no-js" lang="zxx">
 
@@ -51,7 +55,13 @@
 
         <!--== Start Header Wrapper ==-->
         <header class="header-wrapper">
-
+    <?php 
+        if(isset($_SESSION['loggedin']) && $_SESSION['loggedin']==true){
+        $loggedin= true;
+        }
+        else{
+        $loggedin = false;
+        }echo '
             <div class="header-middle d-none d-xl-block">
                 <div class="container">
                     <div class="row align-items-center justify-content-between align-items-center">
@@ -72,8 +82,16 @@
                                 </button>
                             </form>
                         </div>
-                        <div class="col-auto d-flex justify-content-end align-items-center">
-                            <a href="?p=loginregister" class="header-action-account">Login / SignUp</a>
+                        
+                        <div class="col-auto d-flex justify-content-end align-items-center">';
+                        if(!$loggedin){
+                            echo '
+                            <a href="?p=loginregister" class="header-action-accoun">SignUp | </a>
+                            <a href="?p=login" class="header-action-account">| Login</a>';}
+                        if($loggedin){
+                            echo '
+                            <a href="?p=logout" class="header-action-account"> Logout</a>';}
+                            echo '
                             <a class="header-action-wishlist" href="shop-wishlist.html">
                                 <i class="icon-heart"></i>
                             </a>
@@ -85,7 +103,8 @@
                         </div>
                     </div>
                 </div>
-            </div>
+            </div>';
+            ?>
             <div class="header-middle d-xl-none">
                 <div class="container">
                     <div class="row align-items-center justify-content-between align-items-center">
