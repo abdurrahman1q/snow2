@@ -58,7 +58,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
                 </div>
                 <div class="col-sm-6">
                     <div class="page-header-thumb">
-                        <img src="assets/images/photos/page-title.png" alt="Image-HasTech" width="546" height="281">
+                        <img src="https://upload.wikimedia.org/wikipedia/commons/6/6a/Please_log_in_image.png" alt="Image-HasTech" width="546" height="281">
                     </div>
                 </div>
             </div>
@@ -68,10 +68,10 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
 
 
    <!--== Start Login Wrapper ==-->
-   <div class="login-register-area section-space">
+   <div class="login-register-area section-space ">
         <div class="container">
             <div class="row">
-                <div class="col-md-5 login-register-border">
+                <div class="col-md-5 login-register-border ">
                     <div class="login-register-content">
                         <div class="login-register-title mb-30">
                             <h3>Login</h3>
@@ -99,6 +99,10 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
                             </form>
                         </div>
                     </div>
+
+                </div>
+                <div class="col-md-7 text-center">
+                    <img src="https://partner-cons.com/files/73810-business-idea-animation.gif" alt="urraaaa" style="height: 550px">
                 </div>
             </div>
         </div>

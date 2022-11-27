@@ -68,16 +68,16 @@ session_start();
                         <div class="col-auto">
                             <div class="header-logo-area">
                                 <a href="?p=home">
-                                    <img class="logo-main" src="abdurrahman.png" width="100" height="21"
+                                    <img class="logo-main" src="abdurrahman.png" width="100" height="25"
                                         alt="Logo">
                                 </a>
                             </div>
                         </div>
                         <div class="col-auto">
                             <form class="header-search-box header-search-box-two ms-3">
-                                <input class="form-control" type="text" id="search" placeholder="Search Products">
+                                <input class="form-control border border-warning" type="text" id="search" placeholder="Search Anything">
 
-                                <button type="submit" class="btn-src">
+                                <button type="submit" class="btn-src border border-warning  ">
                                     <i class="icon-magnifier"></i>
                                 </button>
                             </form>
@@ -90,7 +90,17 @@ session_start();
                             <a href="?p=login" class="header-action-account">| Login</a>';}
                         if($loggedin){
                             echo '
-                            <a href="?p=logout" class="header-action-account"> Logout</a>';}
+                           
+                                <div class="btn-group">
+                                <button type="button" class="btn btn-secondary dropdown-toggle header-action-account" data-bs-toggle="dropdown" aria-expanded="false">
+                                    Dashboard
+                                </button>
+                                <ul class="dropdown-menu">
+                                    <li><a href="?p=logout" class="header-action-accoun dropdown-item"> Profile</a></li>
+                                    <li><a href="?p=logout" class="header-action-accoun dropdown-item"> Logout</a></li>
+                                </ul>
+                                </div>';}
+
                             echo '
                             <a class="header-action-wishlist" href="shop-wishlist.html">
                                 <i class="icon-heart"></i>

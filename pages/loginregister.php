@@ -48,13 +48,13 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
                         <h2 class="page-header-title">Login / Register</h2>
                         <ol class="breadcrumb">
                             <li class="breadcrumb-item"><a href="?p=home">Home //</a></li>
-                            <li class="breadcrumb-item active" aria-current="page">Login-Register</li>
+                            <li class="breadcrumb-item active" aria-current="page">Register</li>
                         </ol>
                     </div>
                 </div>
                 <div class="col-sm-6">
                     <div class="page-header-thumb">
-                        <img src="assets/images/photos/page-title.png" alt="Image-HasTech" width="546" height="281">
+                        <img src="https://st2.depositphotos.com/3837271/8402/i/950/depositphotos_84020488-stock-photo-hand-with-marker-writing-text.jpg" alt="Image-HasTech" width="546" height="281">
                     </div>
                 </div>
             </div>
@@ -107,6 +107,9 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
                             </div>
                         </div>
                     </div>
+                </div>
+                <div class="col-md-5 text-center">
+                    <img src="https://partner-cons.com/files/73810-business-idea-animation.gif" alt="urraaaa" style="height: 550px">
                 </div>
             </div>
         </div>
