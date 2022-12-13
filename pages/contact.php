@@ -1,26 +1,36 @@
-<style>
-button {
-    background-color: transparent;
-}
-</style>
+
 
 <?php
+if(isset($_GET['?s'])){
+    if($_GET['?s'] =="1"){
+        echo "success";
+    }
+}
  include('dbconnect.php');
  if(isset($_POST['btnsave'])) {
         
         $name = $_POST['name'];
         $email = $_POST['email'];
+        
+        $emailB = filter_var($email, FILTER_SANITIZE_EMAIL);
+
+        if (filter_var($emailB, FILTER_VALIDATE_EMAIL) === false ||
+            $emailB != $email
+        ) {
+            echo "This email adress isn't valid!";
+            exit(0);
+        }
         $subject = $_POST['subject'];
         $msg = $_POST['message'];    
 
   $sql = "INSERT INTO contact (name, email, subject, msg)
   VALUES ('$name', '$email', '$subject', '$msg')";
-  
+  $result = mysqli_query($conn, $sql);
 
-    if ($conn->query($sql) === TRUE) {
-    echo "New record created successfully";
-    } else {
-    echo "Error: " . $sql . "<br>" . $conn->error;
+    if($result){
+        echo '<script>location.href ="?p=contact&?s=1"</script>';
+    }else{
+        echo "failed";
     }
   
   $conn->close();
@@ -80,7 +90,7 @@ button {
         </div>
         <div class="col-md-5 text-center ">
                
-                <div class="features-area">
+                <!-- <div class="features-area">
                     <div class="row mb-n8 mt-n2">
                        
                         <div class="col-sm-6 col-md-6 col-lg-3 mb-6">
@@ -125,7 +135,7 @@ button {
                         
                      
                     </div>
-                </div>
+                </div> -->
                 <h4>Find us here</h4>
                 <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3651.905886237609!2d90.38469101443691!3d23.750735294681625!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3755b9ac5fce59cb%3A0xfd3e17cbaa2f7805!2sKaizen%20IT%20Ltd.!5e0!3m2!1sbn!2sbd!4v1669546572600!5m2!1sbn!2sbd" width="400" height="300" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
         </div>

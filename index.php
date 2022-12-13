@@ -96,7 +96,7 @@ session_start();
                                     Dashboard
                                 </button>
                                 <ul class="dropdown-menu">
-                                    <li><a href="?p=logout" class="header-action-accoun dropdown-item"> Profile</a></li>
+                                    <li><a href="?a=account" class="header-action-accoun dropdown-item"> My Account</a></li>
                                     <li><a href="?p=logout" class="header-action-accoun dropdown-item"> Logout</a></li>
                                 </ul>
                                 </div>';}
@@ -377,16 +377,16 @@ session_start();
                                 <div id="widgetTitleId-4" class="collapse widget-collapse-body">
                                     <div class="widget-contact">
                                         <p class="widget-contact-desc">If you have any question. please contact us <a
-                                                href="mailto://demo@example.com">demo@example.com</a></p>
+                                                href="mailto://contact@snowbreeze.com">contact@snowbreeze.com</a></p>
                                         <div class="widget-info-item mb-6">
                                             <img src="assets/images/icons/pin.png" alt="Icon">
-                                            <p>Your address goes here. 123, Address.</p>
+                                            <p>Dhanmondi, Dhaka, Bangladesh.</p>
                                         </div>
                                         <div class="widget-info-item">
                                             <img src="assets/images/icons/mobile.png" alt="Icon">
                                             <div class="info-item-call">
                                                 <a href="tel://+0123456789 "> + 0 123 456 789 </a>
-                                                <a href="tel://+0129456789 "> + 0 129 456 789 </a>
+                                                <a href="tel://+0129456789 "> + 0 129 456 788 </a>
                                             </div>
                                         </div>
                                     </div>
@@ -401,7 +401,7 @@ session_start();
                 <div class="footer-bottom">
                     <p class="copyright">© 2022 Snowbreeze. Made with <i class="fa fa-heart"></i> by <a target="_blank"
                             href="https://github.com/abdurrahman1q">AbdurRahman</a></p>
-                    <!-- <a href="shop.html"><img src="assets/images/shop/payment.png" alt="Image-HasTech"></a> -->
+                    <!-- <a href="shop.html"><img src="assets/images/shop/payment.png" alt="Image-SnowBreeze"></a> -->
                 </div>
 
             </div>

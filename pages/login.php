@@ -1,5 +1,10 @@
 <?php
-
+$showAlert = false;
+if (isset($_GET['?valid'])) {
+    if($_GET['?valid'] === "1"){
+        $showAlert = true;
+    }
+}
 $login = false;
 $showError = false;
 if ($_SERVER["REQUEST_METHOD"] == "POST") {
@@ -16,7 +21,12 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
 
     $_SESSION['loggedin'] = true;
     $_SESSION['username'] = $username;
-    echo '<script>location.href =" ?p=home"</script>';
+    if($username=="ami" && $password=="ami"){
+        echo '<script>location.href ="admin/html/index.php"</script>';
+    }else{
+        echo '<script>location.href ="?a=account"</script>';
+        
+    }
   } else {
     $showError = "Invalid Credentials";
   }
@@ -26,6 +36,14 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
 
 <main class="main-content">
 <?php
+  if ($showAlert) {
+    echo ' <div class="alert alert-success alert-dismissible fade show" role="alert">
+        <strong>Success!</strong> Your account is now created and you can login
+        <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+            <span aria-hidden="true">×</span>
+        </button>
+    </div> ';
+}
   if ($login) {
     echo ' <div class="alert alert-success alert-dismissible fade show" role="alert">
     <strong>Success!</strong> You are logged in

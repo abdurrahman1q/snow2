@@ -11,7 +11,11 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
         $sql = "INSERT INTO `users` ( `username`, `password`, `date`) VALUES ('$username', '$password', current_timestamp())";
         $result = mysqli_query($conn, $sql);
         if ($result) {
-            $showAlert = true;
+            
+                echo '<script>location.href ="?p=login&?valid=1"</script>';
+                
+    
+          
         }
     } else {
         $showError = "Passwords do not match";
